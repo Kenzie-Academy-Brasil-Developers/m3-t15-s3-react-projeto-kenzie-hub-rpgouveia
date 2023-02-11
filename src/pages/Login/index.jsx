@@ -57,7 +57,7 @@ const Login = ({loginUser}) => {
                 <button type='submit'>Entrar</button>
                 <div>
                     <p>Ainda não possui uma conta?</p>
-                    <Link>Cadastre-se</Link>
+                    <Link to={'/register'}>Cadastre-se</Link>
                 </div>
             </form>
         </main>

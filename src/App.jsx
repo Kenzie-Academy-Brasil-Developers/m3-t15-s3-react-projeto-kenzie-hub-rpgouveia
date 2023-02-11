@@ -27,10 +27,24 @@ function App() {
       toast.error('Email ou senha inválido')
     }
   }
+
+  const registerUser = async (formData) => {
+    try {
+      await api.post('/users', formData)
+      toast.success('Cadastro feito com sucesso')
+      navigate('/')
+    } catch (error) {
+      console.log(error)
+      toast.error('Cadastro falhou')
+    }
+  }
   
   return (
     <>
-      <ApplicationRoutes loginUser={loginUser} />
+      <ApplicationRoutes
+        loginUser={loginUser}
+        registerUser={registerUser}
+      />
       <ToastContainer
         position="top-right"
         autoClose={2000}

@@ -4,11 +4,11 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Home from '../pages/Home'
 
-const ApplicationRoutes = ({loginUser}) => {
+const ApplicationRoutes = ({loginUser, registerUser}) => {
     return (
         <Routes>
             <Route path='/' element={ <Login loginUser={loginUser} /> }/>
-            <Route path='register' element={ <Register /> }/>
+            <Route path='register' element={ <Register registerUser={registerUser} /> }/>
             <Route path='home' element={ <Home /> } />
         </Routes>
     )
