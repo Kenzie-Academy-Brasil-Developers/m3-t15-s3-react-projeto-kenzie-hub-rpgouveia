@@ -2,14 +2,14 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
-import Home from '../pages/Home'
+import Dashboard from '../pages/Dashboard'
 
-const ApplicationRoutes = ({loginUser, registerUser}) => {
+const ApplicationRoutes = ({loginUser, registerUser, user, setUser}) => {
     return (
         <Routes>
             <Route path='/' element={ <Login loginUser={loginUser} /> }/>
             <Route path='register' element={ <Register registerUser={registerUser} /> }/>
-            <Route path='home' element={ <Home /> } />
+            <Route path='dashboard' element={ <Dashboard user={user} setUser={setUser} /> } />
         </Routes>
     )
 }
