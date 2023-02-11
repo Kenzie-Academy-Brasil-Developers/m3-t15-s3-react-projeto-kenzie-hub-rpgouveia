@@ -21,7 +21,7 @@ function App() {
       localStorage.setItem('@TOKEN', JSON.stringify(token))
       localStorage.setItem('@USERID', JSON.stringify(userId))
       toast.success('Login feito com sucesso')
-      navigate('/home')
+      navigate('/dashboard')
     } catch (error) {
       console.log(error)
       toast.error('Email ou senha inválido')
@@ -31,11 +31,11 @@ function App() {
   const registerUser = async (formData) => {
     try {
       await api.post('/users', formData)
-      toast.success('Cadastro feito com sucesso')
+      toast.success('Cadastro feito com sucesso!')
       navigate('/')
     } catch (error) {
       console.log(error)
-      toast.error('Cadastro falhou')
+      toast.error('Oops! Algo deu errado')
     }
   }
   
@@ -44,6 +44,8 @@ function App() {
       <ApplicationRoutes
         loginUser={loginUser}
         registerUser={registerUser}
+        user={user}
+        setUser={setUser}
       />
       <ToastContainer
         position="top-right"
