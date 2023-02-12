@@ -89,6 +89,11 @@ export const StyledMainLogin = styled.main`
         cursor: pointer;
     }
 
+    button:hover {
+        background-color: var(--color-primary-focus);
+        border: 1.2px solid var(--color-primary-focus);
+    }
+
     form > div {
         margin-top: 10px;
         display: flex;
@@ -127,6 +132,11 @@ export const StyledMainLogin = styled.main`
         color: var(--color-grey-0);
 
         cursor: pointer;
+    }
+
+    a:hover {
+        background-color: var(--color-grey-2);
+        border: 1.2px solid var(--color-grey-2);
     }
 
     @media(min-width: 768px) {
