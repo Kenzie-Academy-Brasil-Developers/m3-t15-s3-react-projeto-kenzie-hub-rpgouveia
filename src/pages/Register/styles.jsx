@@ -1,14 +1,50 @@
 import styled from "styled-components"
 
-export const StyledMainLogin = styled.main`
+export const StyledMainRegister = styled.main`
     background-color: var(--color-grey-4);
 
     section {
-        padding-top: 81px;
+        padding-top: 48px;
+        padding-bottom: 96px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 19px;
+        gap: 32px;
+    }
+
+    section > div {
+        width: 100%;
+        max-width: 370px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+
+        height: 32px;
+        padding: 0px 16px;
+
+        background-color: var(--color-grey-3);
+        border: 1.2px solid var(--color-grey-3);
+        border-radius: 4px;
+
+        font-family: var(--font-family-1);
+        font-weight: var(--font-weight-semiBold);
+        font-size: var(--font-size-4);
+        line-height: 23px;
+        color: var(--color-grey-0);
+    }
+
+    a:hover {
+        background-color: var(--color-grey-2);
+        border: 1.2px solid var(--color-grey-2);
     }
 
     form {
@@ -17,7 +53,7 @@ export const StyledMainLogin = styled.main`
         gap: 17px;
 
         width: 100%;
-        max-width: 369px;
+        max-width: 370px;
         padding: 34px 18px;
         background-color: var(--color-grey-3);
         box-shadow: 0px 4px 40px -10px var(--color-black-opacity-25);
@@ -31,6 +67,15 @@ export const StyledMainLogin = styled.main`
         font-size: var(--font-size-3);
         line-height: 22px;
         color: var(--color-grey-0);
+    }
+
+    p {
+        align-self: center;
+        font-family: var(--font-family-1);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--font-size-4);
+        line-height: 18px;
+        color: var(--color-grey-1);
     }
 
     fieldset {
@@ -89,65 +134,54 @@ export const StyledMainLogin = styled.main`
         cursor: pointer;
     }
 
-    form > div {
-        margin-top: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 17px;
-    }
-
-    p {
-        font-family: var(--font-family-1);
-        font-weight: var(--font-weight-semiBold);
-        font-size: var(--font-size-4);
-        line-height: 18px;
-        color: var(--color-grey-1);
-    }
-
-    a {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-
+    select {
         height: 38.5px;
-        width: 100%;
-        padding: 0px 22px;
+        padding: 0px 13px;
 
-        background-color: var(--color-grey-1);
-        border: 1.2px solid var(--color-grey-1);
+        background-color: var(--color-grey-2);
+        border: 1.2px solid var(--color-grey-2);
         border-radius: 4px;
 
         font-family: var(--font-family-1);
-        font-weight: var(--font-weight-medium);
-        font-size: var(--font-size-2);
-        line-height: 26px;
-        color: var(--color-grey-0);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--font-size-3);
+        line-height: 21px;
+        color: var(--color-grey-1);
+    }
 
-        cursor: pointer;
+    button:hover {
+        background-color: var(--color-primary-focus);
+        background-color: var(--color-primary-focus);
     }
 
     @media(min-width: 768px) {
-        img {
+
+        section {
+            gap: 40px;
+        }
+
+        section > div > img {
             width: 144px;
             height: 20px;
         }
 
-        section {
-            padding-top: 77px;
-            gap: 36px;
+        section > div > a {
+            height: 40px;
+            line-height: 28px;
         }
 
         form {
-            padding: 42px 22px;
             gap: 22px;
+            padding: 42px 22px;
         }
 
         h1 {
             font-size: var(--font-size-1);
             line-height: 28px;
+        }
+
+        p {
+            line-height: 22px;
         }
 
         fieldset {
@@ -157,21 +191,11 @@ export const StyledMainLogin = styled.main`
         input {
             height: 48px;
             padding: 0px 16px;
-            font-size: var(--font-size-2);
-            line-height: 26px;
         }
 
-        button {
+        select {
             height: 48px;
-        }
-
-        form > div {
-            margin-top: 12px;
-            gap: 22px;
-        }
-
-        a {
-            height: 48px;
+            padding: 0px 16px;
         }
     }
 `
