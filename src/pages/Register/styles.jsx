@@ -115,7 +115,22 @@ export const StyledMainRegister = styled.main`
     input:focus::placeholder {
         color: var(--color-grey-0);
     }
-
+    
+    select {
+        height: 38.5px;
+        padding: 0px 13px;
+        
+        background-color: var(--color-grey-2);
+        border: 1.2px solid var(--color-grey-2);
+        border-radius: 4px;
+        
+        font-family: var(--font-family-1);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--font-size-3);
+        line-height: 21px;
+        color: var(--color-grey-1);
+    }
+    
     button {
         height: 38.5px;
         width: 100%;
@@ -134,26 +149,11 @@ export const StyledMainRegister = styled.main`
         cursor: pointer;
     }
 
-    select {
-        height: 38.5px;
-        padding: 0px 13px;
-
-        background-color: var(--color-grey-2);
-        border: 1.2px solid var(--color-grey-2);
-        border-radius: 4px;
-
-        font-family: var(--font-family-1);
-        font-weight: var(--font-weight-regular);
-        font-size: var(--font-size-3);
-        line-height: 21px;
-        color: var(--color-grey-1);
-    }
-
     button:hover {
         background-color: var(--color-primary-focus);
         background-color: var(--color-primary-focus);
     }
-
+    
     @media(min-width: 768px) {
 
         section {
@@ -196,6 +196,10 @@ export const StyledMainRegister = styled.main`
         select {
             height: 48px;
             padding: 0px 16px;
+        }
+
+        button {
+            height: 48px;
         }
     }
 `
