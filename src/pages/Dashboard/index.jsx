@@ -1,6 +1,8 @@
 import React from 'react'
-import Logo from '../../components/Logo'
 import { useNavigate } from 'react-router-dom'
+import Nav from './Nav'
+import Header from './Header'
+import Main from './Main'
 
 const Dashboard = ({user, setUser}) => {
     const {name, course_module } = user
@@ -14,18 +16,9 @@ const Dashboard = ({user, setUser}) => {
 
     return (
         <>
-            <nav>
-                <Logo />
-                <button onClick={() => logout()}>Sair</button>
-            </nav>
-            <header>
-                <h1>Olá, {name}</h1>
-                <p>{course_module}</p>
-            </header>
-            <main>
-                <h1>Que pena! Estamos em desenvolvimento :(</h1>
-                <p>Nossa aplicação está em desenvolvimento, em breve teremos novidades</p>
-            </main>
+            <Nav logout={logout} />
+            <Header name={name} course_module={course_module} />
+            <Main />
         </>
     )
 }
