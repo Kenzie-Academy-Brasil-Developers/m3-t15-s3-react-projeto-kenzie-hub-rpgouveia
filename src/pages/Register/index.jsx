@@ -6,6 +6,8 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import Input from '../../components/Input'
 import Select from '../../components/Select'
+import { StyledMainRegister } from './styles'
+import { StyledContainer } from '../../styles/container'
 
 const Register = ({registerUser}) => {
     const registerFormSchema = yup.object({
@@ -62,70 +64,74 @@ const Register = ({registerUser}) => {
     }
 
     return (
-        <main>
-            <div>
-                <Logo />
-                <Link to={'/'}>Voltar</Link>
-            </div>
-            <form onSubmit={handleSubmit(submitForm)}>
-                <h1>Crie sua conta</h1>
-                <p>Rápido e grátis, vamos nessa</p>
-                <Input 
-                    label={'Nome'}
-                    type={'text'}
-                    placeholder={'Digite aqui seu nome'}
-                    register={register('name')}
-                    errors={errors.name}
-                />
-                <Input
-                    label={'Email'}
-                    type={'email'}
-                    placeholder={'Digite aqui seu email'}
-                    register={register('email')}
-                    errors={errors.email}
-                />
-                <Input
-                    label={'Senha'}
-                    type={'password'}
-                    placeholder={'Digite aqui sua senha'}
-                    register={register('password')}
-                    errors={errors.password}
-                />
-                <Input
-                    label={'Confirmar senha'}
-                    type={'password'}
-                    placeholder={'Digite aqui sua senha'}
-                    register={register('confirm_password')}
-                    errors={errors.confirm_password}
-                />
-                <Input
-                    label={'Bio'}
-                    type={'text'}
-                    placeholder={'Fale sobre você'}
-                    register={register('bio')}
-                    errors={errors.bio}
-                />
-                <Input
-                    label={'Contato'}
-                    type={'text'}
-                    placeholder={'Opção de contato'}
-                    register={register('contact')}
-                    errors={errors.contact}
-                />
-                <Select
-                    label={'Selecionar módulo'}
-                    type={'select'}
-                    register={register('course_module')}
-                    errors={errors.course_module}
-                >
-                    <option value={'Primeiro módulo'} >Primeiro Módulo</option>
-                    <option value={'Segundo módulo'} >Segundo Módulo</option>
-                    <option value={'Terceiro módulo'} >Terceiro Módulo</option>
-                    <option value={'Quarto módulo'} >Quarto Módulo</option>
-                </Select>
-                <button>Cadastrar</button>
-            </form>
-        </main>
+        <StyledMainRegister>
+            <StyledContainer>
+                <section>
+                    <div>
+                        <Logo />
+                        <Link to={'/'}>Voltar</Link>
+                    </div>
+                    <form onSubmit={handleSubmit(submitForm)}>
+                        <h1>Crie sua conta</h1>
+                        <p>Rápido e grátis, vamos nessa</p>
+                        <Input 
+                            label={'Nome'}
+                            type={'text'}
+                            placeholder={'Digite aqui seu nome'}
+                            register={register('name')}
+                            errors={errors.name}
+                        />
+                        <Input
+                            label={'Email'}
+                            type={'email'}
+                            placeholder={'Digite aqui seu email'}
+                            register={register('email')}
+                            errors={errors.email}
+                        />
+                        <Input
+                            label={'Senha'}
+                            type={'password'}
+                            placeholder={'Digite aqui sua senha'}
+                            register={register('password')}
+                            errors={errors.password}
+                        />
+                        <Input
+                            label={'Confirmar senha'}
+                            type={'password'}
+                            placeholder={'Digite aqui sua senha'}
+                            register={register('confirm_password')}
+                            errors={errors.confirm_password}
+                        />
+                        <Input
+                            label={'Bio'}
+                            type={'text'}
+                            placeholder={'Fale sobre você'}
+                            register={register('bio')}
+                            errors={errors.bio}
+                        />
+                        <Input
+                            label={'Contato'}
+                            type={'text'}
+                            placeholder={'Opção de contato'}
+                            register={register('contact')}
+                            errors={errors.contact}
+                        />
+                        <Select
+                            label={'Selecionar módulo'}
+                            type={'select'}
+                            register={register('course_module')}
+                            errors={errors.course_module}
+                        >
+                            <option value={'Primeiro módulo'} >Primeiro Módulo</option>
+                            <option value={'Segundo módulo'} >Segundo Módulo</option>
+                            <option value={'Terceiro módulo'} >Terceiro Módulo</option>
+                            <option value={'Quarto módulo'} >Quarto Módulo</option>
+                        </Select>
+                        <button>Cadastrar</button>
+                    </form>
+                </section>
+            </StyledContainer>
+        </StyledMainRegister>
     )
 }
 
