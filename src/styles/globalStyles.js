@@ -11,12 +11,16 @@ export const GlobalStyles = createGlobalStyle`
         --color-grey-0: #F8F9FA;
         --color-grey-1: #868E96;
         --color-grey-2: #343B41;
-        --color-grey-3: #343B41;
+        --color-grey-3: #212529;
         --color-grey-4: #121214;
 
         /* Feedback Palette */
         --color-sucess: #3FE864;
         --color-negative: #E83F5B;
+
+        /* Extra Colors */
+        --color-black-opacity-25: rgba(0, 0, 0, 0.25);
+        --color-white: #FFFFFF;
 
         /* Typography */
         --font-family-1: 'Inter', sans-serif;
