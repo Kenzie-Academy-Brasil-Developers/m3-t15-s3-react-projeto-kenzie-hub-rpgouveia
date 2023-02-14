@@ -44,8 +44,6 @@ function App() {
       <ApplicationRoutes
         loginUser={loginUser}
         registerUser={registerUser}
-        user={user}
-        setUser={setUser}
       />
       <ToastContainer
         position="top-right"

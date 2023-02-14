@@ -5,6 +5,8 @@ export const StyledNav = styled.nav`
     padding: 17px 0px 24px 0px;
     background-color: var(--color-grey-4);
     border-bottom: 1px solid var(--color-grey-3);
+    width: 100%;
+    position: fixed;
 
     section {
         display: flex;
