@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api.js";
 import { toast } from "react-toastify";
@@ -9,6 +9,29 @@ export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const token = localStorage.getItem("@TOKEN");
+        if (token) {
+            async function autoLogin() {
+                try {
+                    const config = {
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        }
+                    };
+                    const request = await api.get(`/profile`, config);
+                    console.log(request.data);
+                    setUser(request.data);
+                    navigate("/dashboard");
+                } catch (error) {
+                    console.log(error);
+                    localStorage.removeItem("@TOKEN");
+                }
+            }
+            autoLogin()
+        }
+    }, [])
+
     const loginUser = async (formData) => {
         try {
             const response = await api.post("/sessions", formData);
@@ -16,8 +39,8 @@ export const UserProvider = ({ children }) => {
             const userId = response.data.user.id;
             const userData = response.data.user;
             setUser(userData);
-            localStorage.setItem("@TOKEN", JSON.stringify(token));
-            localStorage.setItem("@USERID", JSON.stringify(userId));
+            localStorage.setItem("@TOKEN", token);
+            localStorage.setItem("@USERID", userId);
             toast.success("Login feito com sucesso");
             navigate("/dashboard");
         } catch (error) {
@@ -33,7 +56,6 @@ export const UserProvider = ({ children }) => {
             navigate("/");
         } catch (error) {
             console.log(error);
-            // console.log(error.response.data.message)
             toast.error("Oops! Algo deu errado");
         }
     };
