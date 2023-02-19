@@ -7,6 +7,7 @@ export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [techList, setTechlist] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -20,8 +21,9 @@ export const UserProvider = ({ children }) => {
                         }
                     };
                     const request = await api.get(`/profile`, config);
-                    console.log(request.data);
+                    // console.log('useEffect on Mount: ', request.data.techs);
                     setUser(request.data);
+                    setTechlist(request.data.techs)
                     navigate("/dashboard");
                 } catch (error) {
                     console.log(error);
@@ -29,8 +31,14 @@ export const UserProvider = ({ children }) => {
                 }
             }
             autoLogin()
+        } else {
+            navigate("/")
         }
     }, [])
+    
+    useEffect(() => {
+        // console.log('useEffect on Update: ', techList)
+    }, [techList])
 
     const loginUser = async (formData) => {
         try {
@@ -38,7 +46,9 @@ export const UserProvider = ({ children }) => {
             const token = response.data.token;
             const userId = response.data.user.id;
             const userData = response.data.user;
+            const userTechs = response.data.user.techs;
             setUser(userData);
+            setTechlist(userTechs);
             localStorage.setItem("@TOKEN", token);
             localStorage.setItem("@USERID", userId);
             toast.success("Login feito com sucesso");
@@ -67,6 +77,8 @@ export const UserProvider = ({ children }) => {
                 setUser,
                 loginUser,
                 registerUser,
+                techList,
+                setTechlist
             }}
         >
             {children}
