@@ -10,11 +10,11 @@ export const StyledContainer = styled.div`
         width: 53.5%;
     }
 
-    @media(min-width: 1023px) {
-        width: 53.5%;
+    @media(min-width: 1439px) {
+        width: 41.5%;
     }
 
-    @media(min-width: 2559px) {
-        width: 56.5%;
+    @media(min-width: 1900px) {
+        width: 40%;
     }
 `
