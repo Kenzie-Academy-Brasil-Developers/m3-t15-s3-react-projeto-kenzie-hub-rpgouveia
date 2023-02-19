@@ -35,4 +35,8 @@ export const GlobalStyles = createGlobalStyle`
         --font-size-3: 14px;
         --font-size-4: 12px;
     }
+
+    body {
+        background-color: var(--color-grey-4);
+    }
 `

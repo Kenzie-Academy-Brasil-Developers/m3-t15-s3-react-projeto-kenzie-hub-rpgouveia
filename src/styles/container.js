@@ -14,7 +14,7 @@ export const StyledContainer = styled.div`
         width: 41.5%;
     }
 
-    @media(min-width: 1900px) {
+    @media(min-width: 1919px) {
         width: 40%;
     }
 `

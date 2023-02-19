@@ -5,15 +5,14 @@ export const StyledNav = styled.nav`
     padding: 17px 0px 24px 0px;
     background-color: var(--color-grey-4);
     border-bottom: 1px solid var(--color-grey-3);
-    width: 100%;
-    position: fixed;
 
-    section {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-    }
+    position: fixed;
+    width: 92.5%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 
     button {
         height: 32px;
@@ -35,5 +34,17 @@ export const StyledNav = styled.nav`
     button:hover {
         background-color: var(--color-grey-2);
         border: 1.2px solid var(--color-grey-2);
+    }
+
+    @media(min-width: 767px) {
+        width: 53.5%;
+    }
+
+    @media(min-width: 1439px) {
+        width: 41.5%;
+    }
+
+    @media(min-width: 1919px) {
+        width: 40%;
     }
 `

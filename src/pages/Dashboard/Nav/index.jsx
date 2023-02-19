@@ -1,19 +1,14 @@
-import React from 'react'
-import Logo from '../../../components/Logo'
-import { StyledContainer } from '../../../styles/container'
-import { StyledNav } from './styles'
+import React from "react";
+import Logo from "../../../components/Logo";
+import { StyledNav } from "./styles";
 
-const Nav = ({logout}) => {
+const Nav = ({ logout }) => {
     return (
         <StyledNav>
-            <StyledContainer>
-                <section>
-                    <Logo />
-                    <button onClick={() => logout()}>Sair</button>
-                </section>
-            </StyledContainer>
+            <Logo />
+            <button onClick={() => logout()}>Sair</button>
         </StyledNav>
-    )
-}
+    );
+};
 
-export default Nav
+export default Nav;
