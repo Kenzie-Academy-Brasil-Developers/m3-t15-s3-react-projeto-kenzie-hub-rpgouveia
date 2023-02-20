@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
 import { useNavigate } from "react-router-dom";
+import { StyledContainer } from "../../styles/container";
 import Nav from "./Nav";
 import Header from "./Header";
 import Main from "./Main";
 import Loading from "./Loading";
-import { StyledContainer } from "../../styles/container";
 
 const Dashboard = () => {
     const { user, setUser } = useContext(UserContext);
