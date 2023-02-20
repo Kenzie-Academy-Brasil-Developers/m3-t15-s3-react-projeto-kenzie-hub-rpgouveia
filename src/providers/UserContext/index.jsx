@@ -8,6 +8,7 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [techList, setTechlist] = useState([]);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -35,10 +36,10 @@ export const UserProvider = ({ children }) => {
             navigate("/")
         }
     }, [])
-    
-    useEffect(() => {
-        // console.log('useEffect on Update: ', techList)
-    }, [techList])
+
+    function handleModal() {
+        setModalIsOpen(!modalIsOpen)
+    }
 
     const loginUser = async (formData) => {
         try {
@@ -78,7 +79,10 @@ export const UserProvider = ({ children }) => {
                 loginUser,
                 registerUser,
                 techList,
-                setTechlist
+                setTechlist,
+                modalIsOpen,
+                setModalIsOpen,
+                handleModal
             }}
         >
             {children}
