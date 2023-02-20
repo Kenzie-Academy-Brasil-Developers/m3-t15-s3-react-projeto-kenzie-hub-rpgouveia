@@ -27,10 +27,10 @@ const Dashboard = () => {
         );
     } else {
         return (
-            <>
+            <StyledContainer>
                 <Nav />
                 <Loading />
-            </>
+            </StyledContainer>
         );
     }
 };
