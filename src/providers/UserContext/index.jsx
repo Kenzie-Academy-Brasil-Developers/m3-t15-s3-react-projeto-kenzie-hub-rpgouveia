@@ -8,7 +8,16 @@ export const UserContext = createContext({});
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [techList, setTechList] = useState([]);
-    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [modal1IsOpen, setModal1IsOpen] = useState(false);
+    const [modal2IsOpen, setModal2IsOpen] = useState(false);
+
+    function handleModal1() {
+        setModal1IsOpen(!modal1IsOpen)
+    }
+
+    function handleModal2() {
+        setModal2IsOpen(!modal2IsOpen)
+    }
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -35,10 +44,6 @@ export const UserProvider = ({ children }) => {
             navigate("/")
         }
     }, [])
-
-    function handleModal() {
-        setModalIsOpen(!modalIsOpen)
-    }
 
     const loginUser = async (formData) => {
         try {
@@ -79,9 +84,12 @@ export const UserProvider = ({ children }) => {
                 registerUser,
                 techList,
                 setTechList,
-                modalIsOpen,
-                setModalIsOpen,
-                handleModal,
+                modal1IsOpen,
+                setModal1IsOpen,
+                handleModal1,
+                modal2IsOpen,
+                setModal2IsOpen,
+                handleModal2,
             }}
         >
             {children}

@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { UserContext } from "../UserContext";
-import { api } from "../../services/api";
+import { api } from "../../services/api.js";
 
 export const TechContext = createContext({});
 
@@ -24,7 +24,9 @@ export const TechProvider = ({ children }) => {
     };
 
     return (
-        <TechContext.Provider value={{ registerTech }}>
+        <TechContext.Provider value={{
+                registerTech,
+            }}>
             {children}
         </TechContext.Provider>
     );
