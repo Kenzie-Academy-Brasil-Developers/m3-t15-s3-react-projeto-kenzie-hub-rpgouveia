@@ -49,7 +49,7 @@ export const StyledRegisterModal = styled(Modal)`
         color: var(--color-grey-0);
     }
 
-    .modal-header > button {
+    .modal-close-btn {
         padding: 0px;
         width: fit-content;
         background-color: transparent;
@@ -131,7 +131,7 @@ export const StyledRegisterModal = styled(Modal)`
         color: var(--color-negative);
     }
 
-    button {
+    .form-submit-btn {
         height: 38.5px;
         width: 100%;
         padding: 0px 22px;
@@ -149,7 +149,7 @@ export const StyledRegisterModal = styled(Modal)`
         cursor: pointer;
     }
 
-    button:hover {
+    .form-submit-btn:hover {
         background-color: var(--color-primary-focus);
         background-color: var(--color-primary-focus);
     }

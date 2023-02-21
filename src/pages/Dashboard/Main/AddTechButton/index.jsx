@@ -58,7 +58,11 @@ const AddTechButton = () => {
             >
                 <div className="modal-header">
                     <h1>Cadastrar Tecnologia</h1>
-                    <button type="button" onClick={handleModal}>
+                    <button
+                        type="button"
+                        className="modal-close-btn"
+                        onClick={handleModal}
+                    >
                         X
                     </button>
                 </div>
@@ -84,7 +88,12 @@ const AddTechButton = () => {
                         <option value={"Intermediário"}>Intermediário</option>
                         <option value={"Avançado"}>Avançado</option>
                     </Select>
-                    <button type="submit">Cadastrar Tecnologia</button>
+                    <button
+                        type="submit"
+                        className="form-submit-btn"
+                    >
+                        Cadastrar Tecnologia
+                    </button>
                 </form>
             </StyledRegisterModal>
         </>
