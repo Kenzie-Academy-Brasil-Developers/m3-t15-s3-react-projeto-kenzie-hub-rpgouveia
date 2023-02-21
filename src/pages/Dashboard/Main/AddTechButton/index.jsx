@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { FaPlus } from "react-icons/fa";
 import { StyledAddTechButton, StyledRegisterModal } from "./styles";
 import { UserContext } from "../../../../providers/UserContext";
+import { TechContext } from "../../../../providers/TechContext";
 import Modal from "react-modal";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -13,6 +14,7 @@ Modal.setAppElement("#root");
 
 const AddTechButton = () => {
     const { modalIsOpen, handleModal } = useContext(UserContext);
+    const { registerTech } = useContext(TechContext)
 
     const modalCustomStyles = {
         overlay: {
@@ -34,14 +36,13 @@ const AddTechButton = () => {
         register,
         handleSubmit,
         formState: { errors },
-        reset,
     } = useForm({
         resolver: yupResolver(registerTechSchema),
     });
 
     const submitForm = (formData) => {
-        console.log(formData);
-        reset();
+        registerTech(formData);
+        handleModal()
     };
 
     return (
@@ -56,7 +57,7 @@ const AddTechButton = () => {
                 style={modalCustomStyles}
             >
                 <div className="modal-header">
-                    <h1>Título do Modal</h1>
+                    <h1>Cadastrar Tecnologia</h1>
                     <button type="button" onClick={handleModal}>
                         X
                     </button>

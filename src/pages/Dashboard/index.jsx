@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
+import { TechProvider } from "../../providers/TechContext";
 import { useNavigate } from "react-router-dom";
 import { StyledContainer } from "../../styles/container";
 import Nav from "./Nav";
@@ -16,13 +17,15 @@ const Dashboard = () => {
         localStorage.clear();
         navigate("/");
     };
-
+    
     if (user) {
         return (
             <StyledContainer>
                 <Nav logout={logout} />
                 <Header name={user.name} course_module={user.course_module} />
-                <Main />
+                <TechProvider>
+                    <Main />
+                </TechProvider>
             </StyledContainer>
         );
     } else {
