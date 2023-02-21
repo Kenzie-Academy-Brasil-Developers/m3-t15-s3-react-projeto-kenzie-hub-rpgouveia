@@ -7,7 +7,7 @@ export const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [techList, setTechlist] = useState([]);
+    const [techList, setTechList] = useState([]);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const navigate = useNavigate();
 
@@ -22,9 +22,8 @@ export const UserProvider = ({ children }) => {
                         }
                     };
                     const request = await api.get(`/profile`, config);
-                    // console.log('useEffect on Mount: ', request.data.techs);
                     setUser(request.data);
-                    setTechlist(request.data.techs)
+                    setTechList(request.data.techs)
                     navigate("/dashboard");
                 } catch (error) {
                     console.log(error);
@@ -49,7 +48,7 @@ export const UserProvider = ({ children }) => {
             const userData = response.data.user;
             const userTechs = response.data.user.techs;
             setUser(userData);
-            setTechlist(userTechs);
+            setTechList(userTechs);
             localStorage.setItem("@TOKEN", token);
             localStorage.setItem("@USERID", userId);
             toast.success("Login feito com sucesso");
@@ -79,10 +78,10 @@ export const UserProvider = ({ children }) => {
                 loginUser,
                 registerUser,
                 techList,
-                setTechlist,
+                setTechList,
                 modalIsOpen,
                 setModalIsOpen,
-                handleModal
+                handleModal,
             }}
         >
             {children}

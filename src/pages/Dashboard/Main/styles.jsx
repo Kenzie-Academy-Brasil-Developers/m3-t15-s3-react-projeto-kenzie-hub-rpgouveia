@@ -29,4 +29,13 @@ export const StyledMain = styled.main`
         flex-direction: column;
         gap: 16px;
     }
+
+    ul > li > h2 {
+        font-family: var(--font-family-1);
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-2);
+        line-height: 18px;
+        color: var(--color-grey-0);
+        text-align: center;
+    }
 `;

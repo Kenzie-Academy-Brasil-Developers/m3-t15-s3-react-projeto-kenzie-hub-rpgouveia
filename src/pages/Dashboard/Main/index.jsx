@@ -7,14 +7,6 @@ import TechCard from "./TechCard";
 const Main = () => {
     const { techList } = useContext(UserContext);
 
-    useEffect(() => {
-        // console.log("Main Component on Mount: ", techList);
-    }, []);
-
-    useEffect(() => {
-        // onsole.log("Main Component on Update: ", techList);
-    }, [techList]);
-
     return (
         <StyledMain>
             <section>
@@ -22,9 +14,15 @@ const Main = () => {
                 <AddTechButton />
             </section>
             <ul>
-                {techList.map((tech) => {
-                    return <TechCard key={tech.id} tech={tech} />;
-                })}
+                {techList.length > 0 ? (
+                    techList.map((tech) => {
+                        return <TechCard key={tech.id} tech={tech} />;
+                    })
+                ) : (
+                    <li>
+                        <h2>Este usuário não possui tecnologias cadastradas</h2>
+                    </li>
+                )}
             </ul>
         </StyledMain>
     );
