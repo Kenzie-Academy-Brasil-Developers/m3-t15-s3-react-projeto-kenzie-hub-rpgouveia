@@ -1,18 +1,19 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../../../providers/UserContext";
+import { TechContext } from "../../../../providers/TechContext";
 import { StyledTechCard } from "./styles";
 
 const TechCard = ({ tech }) => {
     const { title, status } = tech;
     const { handleModal2 } = useContext(UserContext);
+    const { setCurrentTech } = useContext(TechContext);
 
     return (
         <>
             <StyledTechCard
                 onClick={() => {
+                    setCurrentTech(tech)
                     handleModal2();
-                    console.log(tech);
-                    // criar um estado para trabalhar com o modal de editar/deletar
                 }}
             >
                 <h3>{title}</h3>
