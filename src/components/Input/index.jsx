@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Input = ({label, type, placeholder, register, errors}) => {
+const Input = ({label, type, placeholder, register, errors, disabled}) => {
     return (
         <fieldset>
             {label && <label htmlFor={register.name}>{label}</label>}
@@ -9,6 +9,7 @@ const Input = ({label, type, placeholder, register, errors}) => {
                 type={type}
                 placeholder={placeholder}
                 {...register}
+                disabled={disabled}
             />
             {errors && <p>{errors.message}</p>}
         </fieldset>

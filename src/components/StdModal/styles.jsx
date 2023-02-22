@@ -47,4 +47,18 @@ export const StyledStdModal = styled(Modal)`
         color: var(--color-grey-1);
         cursor: pointer;
     }
+
+    @media(min-width: 768px) {
+        .modal-header {
+            padding: 14px 16px;
+        }
+
+        .modal-header > h1 {
+            font-size: var(--font-size-3);
+        }
+
+        .modal-close-btn {
+            font-size: var(--font-size-2);
+        }
+    }
 `

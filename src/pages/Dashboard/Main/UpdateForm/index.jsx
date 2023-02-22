@@ -13,7 +13,6 @@ const  UpdateForm= () => {
     const { currentTech, updateTech, deleteTech } = useContext(TechContext);
     
     const updateTechSchema = yup.object({
-        // title: yup.string().required("Nome da tecnologia é obrigatório"),
         status: yup.string().required("Status é obrigatório"),
     });
 
@@ -22,6 +21,10 @@ const  UpdateForm= () => {
         handleSubmit,
         formState: { errors },
     } = useForm({
+        defaultValues:{
+            title: currentTech.title,
+            status: currentTech.status
+        },
         resolver: yupResolver(updateTechSchema),
     });
 
@@ -43,9 +46,9 @@ const  UpdateForm= () => {
             <Input
                 label={"Nome"}
                 type={"text"}
-                // placeholder={"Digite a tecnologia"}
                 register={register("title")}
                 errors={errors.title}
+                disabled={true}
             />
             <Select
                 label={"Selecionar status"}

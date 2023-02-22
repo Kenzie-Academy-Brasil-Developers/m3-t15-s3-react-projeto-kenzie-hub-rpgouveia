@@ -30,7 +30,7 @@ export const StyledUpdateFormModal = styled.form`
 
         font-family: var(--font-family-1);
         font-weight: var(--font-weight-regular);
-        font-size: var(--font-size-3);
+        font-size: var(--font-size-4);
         line-height: 21px;
         color: var(--color-grey-0);
     }
@@ -53,7 +53,7 @@ export const StyledUpdateFormModal = styled.form`
 
         font-family: var(--font-family-1);
         font-weight: var(--font-weight-regular);
-        font-size: var(--font-size-3);
+        font-size: var(--font-size-4);
         line-height: 21px;
         color: var(--color-grey-1);
     }
@@ -84,7 +84,7 @@ export const StyledUpdateFormModal = styled.form`
 
         font-family: var(--font-family-1);
         font-weight: var(--font-weight-medium);
-        font-size: var(--font-size-2);
+        font-size: var(--font-size-4);
         line-height: 26px;
         color: var(--color-white);
 
@@ -107,7 +107,7 @@ export const StyledUpdateFormModal = styled.form`
 
         font-family: var(--font-family-1);
         font-weight: var(--font-weight-medium);
-        font-size: var(--font-size-2);
+        font-size: var(--font-size-4);
         line-height: 26px;
         color: var(--color-white);
 
@@ -117,5 +117,27 @@ export const StyledUpdateFormModal = styled.form`
     .form-delete-btn:hover {
         background-color: var(--color-grey-2);
         border: 1.2px solid var(--color-grey-2);
+    }
+
+    @media(min-width: 768px) {
+        input {
+            height: 48px;
+            font-size: var(--font-size-2);
+        }
+
+        select {
+            height: 48px;
+            font-size: var(--font-size-2);
+        }
+
+        .form-submit-btn {
+            height: 48px;
+            font-size: var(--font-size-2);
+        }
+
+        .form-delete-btn {
+            height: 48px;
+            font-size: var(--font-size-2);
+        }
     }
 `;
