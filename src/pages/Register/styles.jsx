@@ -151,7 +151,7 @@ export const StyledMainRegister = styled.main`
 
     button:hover {
         background-color: var(--color-primary-focus);
-        background-color: var(--color-primary-focus);
+        border: 1.2px solid var(--color-primary-focus);
     }
     
     @media(min-width: 768px) {
