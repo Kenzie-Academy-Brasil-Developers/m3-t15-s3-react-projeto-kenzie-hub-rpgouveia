@@ -5,6 +5,7 @@ import AddTechButton from "./AddTechButton";
 import TechCard from "./TechCard";
 import StdModal from "../../../components/StdModal";
 import RegisterForm from "./RegisterForm";
+import UpdateForm from "./UpdateForm";
 
 const Main = () => {
     const {
@@ -44,11 +45,11 @@ const Main = () => {
             </StdModal>
 
             <StdModal
-                modalTitle={'Título do Modal'}
+                modalTitle={'Detalhes da Tecnologia'}
                 modalIsOpen={modal2IsOpen}
                 handleModal={handleModal2}
             >
-                <h1>Hello World!</h1>
+                <UpdateForm />
             </StdModal>
         </>
     );
